@@ -10,7 +10,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
+import { CommonModule } from '@angular/common';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
 
@@ -29,7 +31,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatMenuModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatButtonToggleModule
   ],
 
   exports: [
@@ -44,7 +47,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatMenuModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatBadgeModule
+    MatBadgeModule,
+    CommonModule
   ]
 })
 export class MaterialModule { }

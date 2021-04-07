@@ -33,6 +33,9 @@
                                 *ngIf="guestLoginForm.controls['username'].hasError('maxlength') && guestLoginForm.controls['username'].touched">
                                 שם משתמש חייב להיות עד 20 תווים
                             </mat-error>
+                            <mat-error *ngIf="guestLoginForm.controls['username'].hasError('validateBadNameName')">
+                                אין להשתמש בשפה בוטה
+                            </mat-error>
                         </div>
 
                         <div class="form-group">

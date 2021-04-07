@@ -1,0 +1,48 @@
+.line {
+  background-color: white;
+  width: auto;
+  height: 2px;
+  margin: 1% 0px 2% 0px;
+}
+
+.review-button {
+  border-radius: 50%;
+  width: 5vw;
+  height: 7vh;
+  margin: 1%;
+  font-weight: 600;
+}
+
+.review-button:hover {
+  background-color: #dadada;
+}
+
+.active .review-button:active {
+  background-color: #bfbfbf;
+}
+
+.action {
+  text-align: end;
+  margin-top: 2%;
+}
+
+.send-review {
+  font-size: large;
+  border: none;
+  padding: 2%;
+  background: #0E6973;
+  color: #fff;
+  box-shadow: black;
+}
+
+.send-review:hover {
+  background: #0d5e68;
+}
+
+.send-review:active {
+  background: #0c525c;
+}
+
+.buttons {
+  margin: 1% 0px 5% 0px
+}

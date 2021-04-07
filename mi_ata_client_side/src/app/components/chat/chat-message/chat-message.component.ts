@@ -7,10 +7,11 @@ import io from 'socket.io-client';
 import { User } from 'src/app/provider/models/user.model';
 import { UsersService } from 'src/app/provider/services/users.service';
 import { environment } from 'src/environments/environment';
+import { AuthService } from '../../auth/auth.service';
 import { TokenService } from '../../auth/token.service';
 import { ChatService } from '../chat.service';
 import { Message } from './../models/message.model';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 
 @Component({
@@ -46,17 +47,19 @@ export class ChatMessageComponent implements OnInit, AfterViewInit, AfterViewChe
     Math.random() > 0.5 ? (Math.random() > 0.5 ? 'top' : 'bottom') : Math.random() > 0.5 ? 'right' : 'left';
   public toggled = false;
   public content = ' ';
+  showBadWordError: boolean = false;
 
 
   constructor(
     private tokenService: TokenService,
     private msgService: ChatService,
     private route: ActivatedRoute,
-    private usersService: UsersService
-
+    private usersService: UsersService,
+    private authService: AuthService,
   ) {
     this.socket = io(environment.serverAddress);
   }
+
 
   ngOnInit() {
     this.scrollToBottom();
@@ -130,12 +133,15 @@ export class ChatMessageComponent implements OnInit, AfterViewInit, AfterViewChe
       const messageWords = this.message.split(' ');
 
       for (let i = 0; i < messageWords.length; i++) {
-        if (badWords.includes(messageWords[i].toLowerCase())) {
-          messageWords[i] = '***';
+        if (this.authService.badWords.includes(messageWords[i].toLowerCase())) {
+          // messageWords[i] = '***';
+          this.showBadWordError = true;
+          return;
         }
       }
-
-      const outputMessage = messageWords.join(' ');
+      this.showBadWordError = false;
+      // const outputMessage = messageWords.join(' ');
+      const outputMessage = this.message;
       this.msgService
         .SendMessage(this.user._id, this.receiverData._id, this.receiverData.username, outputMessage)
         .subscribe((data) => {
@@ -145,23 +151,33 @@ export class ChatMessageComponent implements OnInit, AfterViewInit, AfterViewChe
     }
   }
 
-  myFunction() {
-    if (this.PopUpFlag === true) {
-      this.PopUpFlag = false;
-      setTimeout(() => {
-        Swal.fire({
-          icon: 'info',
-          html:
-            'נשמח אם תשתתף בשאלון אנונימי' +
-            '<a href="//sweetalert2.github.io"> לשאלון לחץ כאן</a> '
-          ,
-          showCloseButton: true,
-          showConfirmButton: false
+  // openSurveyPopup() {
+  //   // if (this.PopUpFlag === true) {
+  //   // this.PopUpFlag = false;
+    
+  //   Swal.fire({
+  //     icon: 'info',
+  //     html:
+  //       'נשמח אם תשתתף בשאלון אנונימי' +
+  //       '<a href="//sweetalert2.github.io"> לשאלון לחץ כאן</a> '
+  //     ,
+  //     showCloseButton: true,
+  //     showConfirmButton: false
+  //   });
+  //   // setTimeout(() => {
+  //   //   Swal.fire({
+  //   //     icon: 'info',
+  //   //     html:
+  //   //       'נשמח אם תשתתף בשאלון אנונימי' +
+  //   //       '<a href="//sweetalert2.github.io"> לשאלון לחץ כאן</a> '
+  //   //     ,
+  //   //     showCloseButton: true,
+  //   //     showConfirmButton: false
 
-        });
-      }, 10000);
-    }
-  }
+  //   //   });
+  //   // }, 10000);
+  //   // }
+  // }
 
   Toggled() {
     this.toggled = !this.toggled;
@@ -184,4 +200,8 @@ export class ChatMessageComponent implements OnInit, AfterViewInit, AfterViewChe
       });
     }, 500);
   }
+
+  // ngOnDestroy(): void {
+  //   this.openSurveyPopup();
+  // }
 }

@@ -35,13 +35,17 @@
                                 *ngIf="signupForm.controls['username'].hasError('maxlength') && signupForm.controls['username'].touched">
                                 שם משתמש חייב להיות עד 20 תווים
                             </mat-error>
+                            <mat-error *ngIf="signupForm.controls['username'].hasError('validateBadNameName')">
+                                אין להשתמש בשפה בוטה
+                            </mat-error>
                         </div>
 
                         <div class="form-group">
                             <label for="groupList">כתובת דוא"ל</label>
                             <input type="email" class="form-control" placeholder="הקלד.י כתובת דוא''ל תקנית" required
                                 formControlName="email">
-                            <mat-hint style="color: rgb(160, 160, 160);" align="start">לדוגמא: emailname@doamin.com</mat-hint><br>
+                            <mat-hint style="color: rgb(160, 160, 160);" align="start">לדוגמא: emailname@doamin.com
+                            </mat-hint><br>
                             <mat-error
                                 *ngIf="signupForm.controls['email'].hasError('required') && signupForm.controls['email'].touched">
                                 כתובת דוא"ל היא שדה חובה

@@ -53,8 +53,9 @@
                         <div class="input_msg_write">
                             <input type="text" class="write_msg" placeholder="הקלד.י הודעה..." name="message"
                                 [(ngModel)]="message" (keypress)="IsTyping()" autocomplete="off" maxlength="500" /><br>
-                            <span>{{message ? message.length : 0}} / 500</span>
-                            <button class="btn-primary msg_send_btn" (click)="myFunction()" mat-mini-fab>
+                            <span style="margin-left: 20px;">{{message ? message.length : 0}} / 500</span>
+                            <span style="color: red; font-weight: 600;" *ngIf="showBadWordError">אין להשתמש בשפה בוטה. יש למחוק את המילים הפוגעניות ולנסות לשלוח הודעה בשנית</span>
+                            <button class="btn-primary msg_send_btn" mat-mini-fab>
                                 <mat-icon>send</mat-icon>
                             </button>
                         </div>

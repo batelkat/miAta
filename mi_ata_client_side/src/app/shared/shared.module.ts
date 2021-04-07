@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 // import { NgxAutoScrollModule } from 'ngx-auto-scroll';
 // import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { TokenInterceptor } from '../components/auth/token-interceptor';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -29,10 +31,8 @@ import { TokenInterceptor } from '../components/auth/token-interceptor';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    // NgxAutoScrollModule,
-    // FileUploadModule,
-    // InfiniteScrollModule,
-    // EmojiPickerModule.forRoot(),
+    MatButtonToggleModule,
+    MatIconModule
   ],
   providers: [
     {

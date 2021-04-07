@@ -1,6 +1,7 @@
 import { MainHeaderComponent } from './layout/main-header/main-header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,6 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './layout/material/material.module';
+import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './components/auth/login/login.component';
 import { PeopleComponent } from './components/people/people.component';
@@ -22,10 +24,12 @@ import { AdminSettingComponent } from './components/admin-setting/admin-setting.
 import { GoodToKnowComponent } from './components/chat/good-to-know/good-to-know.component';
 import { QuestionsComponent } from './components/chat/questions/questions.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { MatButtonModule } from '@angular/material/button';
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { EnumPipe } from './provider/pipes/enum.pipe';
 import { environment } from 'src/environments/environment';
+import { PostChatUserReviewComponent } from './components/chat/post-chat-user-review/post-chat-user-review.component';
 
 const config: SocketIoConfig = { url: environment.serverAddress, options: {} };
 
@@ -48,6 +52,7 @@ const config: SocketIoConfig = { url: environment.serverAddress, options: {} };
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
@@ -57,13 +62,14 @@ const config: SocketIoConfig = { url: environment.serverAddress, options: {} };
     HttpClientModule,
     RouterModule,
     ScrollingModule,
-    SocketIoModule.forRoot(config)
-
-  ],
+    SocketIoModule.forRoot(config),
+    MatDialogModule,
+    MatButtonModule],
   providers: [
     CookieService,
     SelectService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PostChatUserReviewComponent]
 })
 export class AppModule { }

@@ -7,6 +7,8 @@ import { ChatMessageModule } from './chat-message/chat-message.module';
 import { ChatRoutingModule } from './chat-routing.module';
 import { ChatComponent } from './chat.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { PostChatUserReviewComponent } from './post-chat-user-review/post-chat-user-review.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -14,13 +16,15 @@ import { QuestionsComponent } from './questions/questions.component';
 @NgModule({
   declarations: [
     ChatComponent,
-    ChatMessageComponent
+    ChatMessageComponent,
+    PostChatUserReviewComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     ChatMessageModule,
-    ChatRoutingModule
+    ChatRoutingModule,
+    MatButtonModule
   ],
   providers: [TokenService]
   // exports: [ChatComponent]

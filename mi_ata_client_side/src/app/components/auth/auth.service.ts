@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AbstractControl, ValidatorFn } from '@angular/forms';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { AppConfig } from 'src/app/provider/configuration/api';
 import { User } from 'src/app/provider/models/user.model';
@@ -14,6 +15,8 @@ export class AuthService {
 
   private logonUserLocalStorageName = 'mi-ata-app.logonUserDetails';
   public loggedInUserSubject: BehaviorSubject<User> = new BehaviorSubject<User>(null);
+  badWords: string[] = ['חרא','מניאק','בן זונה','בנזונה','כלבה','חמור'
+  ,'זבל','זונה','בת כלבה','בן כלבה','בתזונה','בת זונה','שרמוטה','בן שרמוטה','כוס','כוסעמק','זין']
 
   constructor(
     private http: HttpClient,
@@ -67,6 +70,16 @@ export class AuthService {
   resetLogonUserDetails() {
     localStorage.removeItem(this.logonUserLocalStorageName);
     this.loggedInUserSubject.next(null);
+  }
+
+  checkForBadWords(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: boolean | null } => {
+      return (this.badWords.includes((control.value))) ?
+        {
+          validateBadNameName: true
+        } :
+        null;
+    }
   }
 
 }

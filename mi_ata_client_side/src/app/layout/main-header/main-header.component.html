@@ -19,7 +19,7 @@
             </span>
             <div class="user-profile-details" *ngIf="(loggedInUser$ | async)">
                 <span class="user-name"> {{(loggedInUser$ | async)?.username}} </span>
-                <span class="user-details"  *ngIf="(loggedInUser$ | async)?.username !== 'admin'">
+                <span class="user-details" *ngIf="(loggedInUser$ | async)?.username !== 'admin'">
                     {{(loggedInUser$ | async)?.nation?.name}} |
                     {{(loggedInUser$ | async)?.religion?.name}}
                 </span>

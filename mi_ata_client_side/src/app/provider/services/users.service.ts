@@ -12,6 +12,7 @@ import { User } from '../models/user.model';
   providedIn: 'root'
 })
 export class UsersService {
+  surveyOpened: boolean = false;
   constructor(
     private http: HttpClient,
     private configService: ConfigurationService,

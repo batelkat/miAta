@@ -13,7 +13,7 @@ import { AuthGuard } from '../auth/auth.guard';
   imports: [
     CommonModule,
     SharedModule,
-    PeopleRoutingModule
+    PeopleRoutingModule,
   ],
   exports: [PeopleComponent],
   providers: [TokenService]

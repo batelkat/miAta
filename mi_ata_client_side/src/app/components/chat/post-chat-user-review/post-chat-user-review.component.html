@@ -1,0 +1,56 @@
+<div mat-dialog-title>
+    <span>דרוג עבור משתמש</span><br>
+    <span style="font-size: large;">
+        <b>{{data.username}}</b> - {{data.nation.name}} | {{data.religion.name}}
+    </span>
+    <div class="line"></div>
+</div>
+<div mat-dialog-content>
+    <span style="font-size: x-large;">באיזו מידה את.ה מסכימ.ה עם {{data.username}}?</span><br>
+    <div class="d-flex flex-row buttons">
+        <!-- <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='0'}">לא רלוונטי</button>
+        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='1'}">1</button>
+        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='2'}">2</button>
+        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='3'}">3</button>
+        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='4'}">4</button>
+        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='5'}">5</button>
+        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='6'}">6</button>
+        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='7'}">7</button>
+        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='8'}">8</button>
+        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='9'}">9</button>
+        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='10}">10</button> -->
+        <button class="review-button">לא רלוונטי</button>
+        <button class="review-button">1</button>
+        <button class="review-button">2</button>
+        <button class="review-button">3</button>
+        <button class="review-button">4</button>
+        <button class="review-button">5</button>
+        <button class="review-button">6</button>
+        <button class="review-button">7</button>
+        <button class="review-button">8</button>
+        <button class="review-button">9</button>
+        <button class="review-button">10</button>
+    </div>
+    <span style="font-size: x-large;">באיזו מידה את.ה מעריכ.ה את אופן השיח של {{data.username}}?</span><br>
+    <div class="d-flex flex-row buttons">
+        <button class="review-button">לא רלוונטי</button>
+        <button class="review-button">1</button>
+        <button class="review-button">2</button>
+        <button class="review-button">3</button>
+        <button class="review-button">4</button>
+        <button class="review-button">5</button>
+        <button class="review-button">6</button>
+        <button class="review-button">7</button>
+        <button class="review-button">8</button>
+        <button class="review-button">9</button>
+        <button class="review-button">10</button>
+        <!-- <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle value="bold">Bold</mat-button-toggle>
+            <mat-button-toggle value="italic">Italic</mat-button-toggle>
+            <mat-button-toggle value="underline">Underline</mat-button-toggle>
+        </mat-button-toggle-group> -->
+    </div>
+</div>
+<div class="action" mat-dialog-actions>
+    <button class="send-review" mat-button (click)="gradeUser()">דרג ושלח</button>
+</div>

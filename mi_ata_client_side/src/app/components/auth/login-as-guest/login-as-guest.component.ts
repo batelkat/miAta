@@ -47,7 +47,7 @@ export class LoginAsGuestComponent implements OnInit {
 
   initForm() {
     this.guestLoginForm = this.fb.group({
-      username: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(2)]],
+      username: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(2), this.authService.checkForBadWords()]],
       nation: [null, [Validators.required]],
       religion: ['', [Validators.required]],
       userType: ['אורח']
