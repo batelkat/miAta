@@ -8,47 +8,31 @@
 <div mat-dialog-content>
     <span style="font-size: x-large;">באיזו מידה את.ה מסכימ.ה עם {{data.username}}?</span><br>
     <div class="d-flex flex-row buttons">
-        <!-- <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='0'}">לא רלוונטי</button>
-        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='1'}">1</button>
-        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='2'}">2</button>
-        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='3'}">3</button>
-        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='4'}">4</button>
-        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='5'}">5</button>
-        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='6'}">6</button>
-        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='7'}">7</button>
-        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='8'}">8</button>
-        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='9'}">9</button>
-        <button [ngClass]="{'review-button': true, 'active': reviewResult.agreement=='10}">10</button> -->
-        <button class="review-button">לא רלוונטי</button>
-        <button class="review-button">1</button>
-        <button class="review-button">2</button>
-        <button class="review-button">3</button>
-        <button class="review-button">4</button>
-        <button class="review-button">5</button>
-        <button class="review-button">6</button>
-        <button class="review-button">7</button>
-        <button class="review-button">8</button>
-        <button class="review-button">9</button>
-        <button class="review-button">10</button>
+        <button #top class="review-button" (click)="topButtonPressed(0)">לא רלוונטי</button>
+        <button #top class="review-button" (click)="topButtonPressed(1)">1</button>
+        <button #top class="review-button" (click)="topButtonPressed(2)">2</button>
+        <button #top class="review-button" (click)="topButtonPressed(3)">3</button>
+        <button #top class="review-button" (click)="topButtonPressed(4)">4</button>
+        <button #top class="review-button" (click)="topButtonPressed(5)">5</button>
+        <button #top class="review-button" (click)="topButtonPressed(6)">6</button>
+        <button #top class="review-button" (click)="topButtonPressed(7)">7</button>
+        <button #top class="review-button" (click)="topButtonPressed(8)">8</button>
+        <button #top class="review-button" (click)="topButtonPressed(9)">9</button>
+        <button #top class="review-button" (click)="topButtonPressed(10)">10</button>
     </div>
     <span style="font-size: x-large;">באיזו מידה את.ה מעריכ.ה את אופן השיח של {{data.username}}?</span><br>
     <div class="d-flex flex-row buttons">
-        <button class="review-button">לא רלוונטי</button>
-        <button class="review-button">1</button>
-        <button class="review-button">2</button>
-        <button class="review-button">3</button>
-        <button class="review-button">4</button>
-        <button class="review-button">5</button>
-        <button class="review-button">6</button>
-        <button class="review-button">7</button>
-        <button class="review-button">8</button>
-        <button class="review-button">9</button>
-        <button class="review-button">10</button>
-        <!-- <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-            <mat-button-toggle value="bold">Bold</mat-button-toggle>
-            <mat-button-toggle value="italic">Italic</mat-button-toggle>
-            <mat-button-toggle value="underline">Underline</mat-button-toggle>
-        </mat-button-toggle-group> -->
+        <button #btm class="review-button" (click)="btmButtonPressed(0)">לא רלוונטי</button>
+        <button #btm class="review-button" (click)="btmButtonPressed(1)">1</button>
+        <button #btm class="review-button" (click)="btmButtonPressed(2)">2</button>
+        <button #btm class="review-button" (click)="btmButtonPressed(3)">3</button>
+        <button #btm class="review-button" (click)="btmButtonPressed(4)">4</button>
+        <button #btm class="review-button" (click)="btmButtonPressed(5)">5</button>
+        <button #btm class="review-button" (click)="btmButtonPressed(6)">6</button>
+        <button #btm class="review-button" (click)="btmButtonPressed(7)">7</button>
+        <button #btm class="review-button" (click)="btmButtonPressed(8)">8</button>
+        <button #btm class="review-button" (click)="btmButtonPressed(9)">9</button>
+        <button #btm class="review-button" (click)="btmButtonPressed(10)">10</button>
     </div>
 </div>
 <div class="action" mat-dialog-actions>

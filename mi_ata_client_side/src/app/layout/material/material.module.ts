@@ -13,6 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatBadgeModule } from '@angular/material/badge';
 import { CommonModule } from '@angular/common';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { AppComponent } from 'src/app/app.component';
 
 
 
@@ -49,6 +50,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatSelectModule,
     MatBadgeModule,
     CommonModule
-  ]
+  ],
+  // bootstrap: [AppComponent]
 })
 export class MaterialModule { }

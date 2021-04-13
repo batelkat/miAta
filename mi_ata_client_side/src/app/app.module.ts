@@ -25,6 +25,7 @@ import { GoodToKnowComponent } from './components/chat/good-to-know/good-to-know
 import { QuestionsComponent } from './components/chat/questions/questions.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { EnumPipe } from './provider/pipes/enum.pipe';
@@ -64,7 +65,9 @@ const config: SocketIoConfig = { url: environment.serverAddress, options: {} };
     ScrollingModule,
     SocketIoModule.forRoot(config),
     MatDialogModule,
-    MatButtonModule],
+    MatButtonModule,
+    MatButtonToggleModule
+  ],
   providers: [
     CookieService,
     SelectService

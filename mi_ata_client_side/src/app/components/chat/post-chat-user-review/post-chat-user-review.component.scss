@@ -7,6 +7,7 @@
 
 .review-button {
   border-radius: 50%;
+  border: none;
   width: 5vw;
   height: 7vh;
   margin: 1%;
@@ -14,11 +15,12 @@
 }
 
 .review-button:hover {
-  background-color: #dadada;
+  background-color: #e6e6e6;
 }
 
-.active .review-button:active {
-  background-color: #bfbfbf;
+.active {
+  background-color: #bebebe;
+
 }
 
 .action {

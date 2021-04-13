@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { TokenInterceptor } from '../components/auth/token-interceptor';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
+import { AppComponent } from '../app.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { MatIconModule } from '@angular/material/icon';
       useClass: TokenInterceptor,
       multi: true
     }
-  ]
+  ],
+  // bootstrap: [AppComponent]
 })
 export class SharedModule { }

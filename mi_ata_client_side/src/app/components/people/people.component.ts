@@ -34,6 +34,7 @@ export class PeopleComponent implements OnInit, AfterViewInit {
     this.getLogonUser();
     // this.GetUsers();
     this.socket.on('refreshPage', () => {
+      // debugger
       this.getLogonUser();
     });
   }

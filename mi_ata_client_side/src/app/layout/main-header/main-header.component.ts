@@ -46,12 +46,12 @@ export class MainHeaderComponent implements OnInit {
   }
 
   checkIfRead(arr) {
-    let checkArr = [];
+    // let checkArr = [];
     arr?.forEach(item => {
       const receiver = item.msgId.message[item.msgId.message.length - 1];
-      if (receiver.isRead === false) {
-        checkArr.push(1);
-        this.msgNumber = _.sum(checkArr);
+      if (!receiver.isRead) {
+        // checkArr.push(1);
+        this.msgNumber += 1;
       }
     });
   }
