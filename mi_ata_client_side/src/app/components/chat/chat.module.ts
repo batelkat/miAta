@@ -9,6 +9,7 @@ import { ChatComponent } from './chat.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { PostChatUserReviewComponent } from './post-chat-user-review/post-chat-user-review.component';
 import { MatButtonModule } from '@angular/material/button';
+// import { SatPopoverModule } from '@ncstate/sat-popover';
 
 
 
@@ -24,7 +25,8 @@ import { MatButtonModule } from '@angular/material/button';
     SharedModule,
     ChatMessageModule,
     ChatRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    // SatPopoverModule
   ],
   providers: [TokenService]
   // exports: [ChatComponent]

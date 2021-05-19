@@ -11,7 +11,7 @@
                             <label for="subGroupList">בחר קבוצה רלוונטית</label>
                             <select class="form-control" formControlName="nation" required>
                                 <option value="">בחר קבוצה...</option>
-                                <option *ngFor="let nation of (nationList$ | async)" [ngValue]="nation">{{nation.name}}
+                                <option *ngFor="let nation of nationList$" [ngValue]="nation">{{nation.name}}
                                 </option>
                             </select>
                         </div>
@@ -40,7 +40,7 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title">רשימה של שאלות</h2>
-                    <div *ngFor="let nation of (nationList$ | async)">
+                    <div *ngFor="let nation of nationList$">
                         <div *ngFor="let religion of nation.religion">
                             <div *ngIf="religion.suggestedQuestions.length !== 0" class="nested-table">
                                 <div class="nation">{{nation.name}}</div>
@@ -75,7 +75,7 @@
                             <label for="subGroupList">בחר קבוצה רלוונטית</label>
                             <select class="form-control" formControlName="nation" required>
                                 <option value="">בחר קבוצה...</option>
-                                <option *ngFor="let nation of (nationList$ | async)" [ngValue]="nation">{{nation.name}}
+                                <option *ngFor="let nation of nationList$" [ngValue]="nation">{{nation.name}}
                                 </option>
                             </select>
                         </div>
@@ -110,7 +110,7 @@
                 <div class="card-body">
                     <h2 class="card-title">רשימה של בועיות הסבר</h2>
 
-                    <div *ngFor="let nation of (nationList$ | async)">
+                    <div *ngFor="let nation of nationList$">
                         <div *ngFor="let religion of nation.religion">
                             <div *ngIf="religion.knowledgeItems.length !== 0" class="nested-table">
                                 <div class="nation">{{nation.name}}</div>
@@ -167,7 +167,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let nation of (nationList$ | async)">
+                            <tr *ngFor="let nation of nationList$">
                                 <td>{{nation._id}}</td>
                                 <td>{{nation.name}}</td>
                                 <td>
@@ -192,7 +192,7 @@
                             <label for="subGroupList">בחר קבוצה רלוונטית</label>
                             <select class="form-control" formControlName="nation" required>
                                 <option value="">בחר קבוצה...</option>
-                                <option *ngFor="let nation of (nationList$ | async)" [ngValue]="nation">{{nation.name}}
+                                <option *ngFor="let nation of nationList$" [ngValue]="nation">{{nation.name}}
                                 </option>
                             </select>
                         </div>
@@ -223,7 +223,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let nation of (nationList$ | async)">
+                            <tr *ngFor="let nation of nationList$">
                                 <td>{{nation._id}}</td>
                                 <td>{{nation.name}}</td>
                                 <td>

@@ -22,7 +22,8 @@ export class AdminSettingComponent implements OnInit {
   nationCreationForm: FormGroup;
   religionCreationForm: FormGroup;
 
-  nationList$: Observable<Nation[]>;
+  nationList$: Nation[] = [];
+  // nationList$: Observable<Nation[]>;
   religionList: Religion[];
 
   constructor(
@@ -190,7 +191,11 @@ export class AdminSettingComponent implements OnInit {
   }
 
   getNationList() {
-    this.nationList$ = this.selectService.getAllNation();
+    this.selectService.getAllNation().subscribe((res)=> {
+      this.nationList$ = res.nations
+      this.selectService.nationListStored = this.nationList$;
+      console.log("file: admin-setting.component.ts ~ line 194 ~ getNationList ~ this.nationList$", this.nationList$)
+    });
   }
 
 

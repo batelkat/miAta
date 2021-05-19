@@ -18,12 +18,13 @@ export class SelectService {
   constructor(private http: HttpClient) { }
 
   getAllNation(): Observable<any> {
-    this.http.get<{ message: string, nations: Nation[] }>(`${environment.baseApi}/GetNations`).subscribe((response) => {
-      this.nationListStored = response.nations;
-      this.nationList$.next(this.nationListStored);
-    });
+    // this.http.get<{ message: string, nations: Nation[] }>(`${environment.baseApi}/GetNations`).subscribe((response) => {
+    //   this.nationListStored = response.nations;
+    //   this.nationList$.next(this.nationListStored);
+    // });
+    return this.http.get<{ message: string, nations: Nation[] }>(`${environment.baseApi}/GetNations`);
 
-    return this.nationList$.asObservable();
+    // return this.nationList$.asObservable();
   }
 
 }

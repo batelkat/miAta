@@ -26,6 +26,7 @@ import { QuestionsComponent } from './components/chat/questions/questions.compon
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+// import { SatPopoverModule } from '@ncstate/sat-popover';
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { EnumPipe } from './provider/pipes/enum.pipe';
@@ -49,7 +50,8 @@ const config: SocketIoConfig = { url: environment.serverAddress, options: {} };
     AdminSettingComponent,
     GoodToKnowComponent,
     QuestionsComponent,
-    EnumPipe
+    EnumPipe,
+    // SatPopoverModule
   ],
   imports: [
     BrowserModule,

@@ -34,11 +34,6 @@ export class PostChatUserReviewComponent implements OnInit {
         btn.nativeElement.setAttribute('class', 'review-button')
       }
     })
-    // Array.from(document.getElementsByClassName('top-btns')).forEach(topBtn => {
-    //   if(topBtn.innerHTML === id+'')
-
-
-    // })
   }
 
   btmButtonPressed(id): void {

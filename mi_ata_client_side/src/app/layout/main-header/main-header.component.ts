@@ -37,7 +37,7 @@ export class MainHeaderComponent implements OnInit {
   ngOnInit(): void {
     this.loggedInUser$ = this.authService.getLogonUserDetails();
     this.authService.getLogonUserDetails().subscribe((user: User) => {
-      if (user._id !== '-1') {
+      if (user?._id !== '-1') {
         this.notifications = user.chatList;
         this.logonUserId = user._id;
         this.checkIfRead(this.notifications);

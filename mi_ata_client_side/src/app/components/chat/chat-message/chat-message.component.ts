@@ -70,7 +70,7 @@ export class ChatMessageComponent implements OnInit, AfterViewInit, AfterViewChe
       this.GetUserByUsername(this.receiver);
 
       this.socket.on('refreshPage', () => {
-        debugger
+        // debugger
         this.GetUserByUsername(this.receiver);
       });
     });
@@ -120,7 +120,6 @@ export class ChatMessageComponent implements OnInit, AfterViewInit, AfterViewChe
 
   GetMessages(senderId, receiverId) {
     this.msgService.GetAllMessages(senderId, receiverId).subscribe(data => {
-      debugger
       this.messagesArray = data.messages.message;
     });
   }
