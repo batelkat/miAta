@@ -41,7 +41,7 @@ export class SignupComponent implements OnInit {
   initData() {
     this.selectService.getAllNation().subscribe((result: any) => {
       // debugger
-      this.nations = result ? result.nations.splice(0,2) : [];
+      this.nations = result ? result.nations : [];
     });
   }
 

@@ -41,7 +41,7 @@ export class LoginAsGuestComponent implements OnInit {
 
   initData() {
     this.selectService.getAllNation().subscribe((result) => {
-      this.nations = result ? result.nations.splice(0,2) : [];
+      this.nations = result ? result.nations : [];
     });
   }
 
