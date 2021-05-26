@@ -39,10 +39,9 @@ export class SignupComponent implements OnInit {
   }
 
   initData() {
-    this.selectService.getAllNation().subscribe((result: Nation[]) => {
+    this.selectService.getAllNation().subscribe((result: any) => {
       // debugger
-      result ? result.splice(result.length-1,1) : null;
-      this.nations = result;
+      this.nations = result ? result.nations.splice(0,2) : [];
     });
   }
 
