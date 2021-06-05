@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AdminSettingService } from 'src/app/provider/services/admin-setting.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -11,6 +11,7 @@ import { Question } from 'src/app/provider/models/question.model';
 import { KnowledgeItem } from '../chat/models/knowledge-item.model';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-admin-setting',
   templateUrl: './admin-setting.component.html',
   styleUrls: ['./admin-setting.component.scss']

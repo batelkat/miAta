@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from '../token.service';
 
+
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-auth-tabs',
   templateUrl: './auth-tabs.component.html',
   styleUrls: ['./auth-tabs.component.scss']
